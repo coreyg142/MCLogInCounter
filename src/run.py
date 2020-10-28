@@ -29,6 +29,7 @@ def write(dict, dir):
     outF.close()
 
 
+
 def printTable(dict):
     outT = ("Name", "No. of logins")
 
