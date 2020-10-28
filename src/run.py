@@ -1,6 +1,7 @@
 import os
 import time
 
+
 def getName(line):
     temp = line.split(" ")[3]
     name = temp.split("[")[0]
@@ -61,10 +62,10 @@ def main():
     sorted_dict = sorted(nameDict.items(), key=lambda x: x[1], reverse=True)
 
     if len(sorted_dict):
-       printTable(sorted_dict)
-       write(sorted_dict, "output\\output.txt")
+        printTable(sorted_dict)
+        write(sorted_dict, "output\\output.txt")
     end = time.process_time()
-    print(end-start)
+    print(end - start)
 
 
 if __name__ == '__main__':
