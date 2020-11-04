@@ -1,5 +1,4 @@
 import os
-import time
 
 
 def getName(line):
@@ -15,7 +14,7 @@ def countName(name, dict):
         dict[name] += 1
 
 
-def write(dict, dir):
+def writeTableFile(dict, dir):
     col_width = max(len(str(element)) for pair in dict for element in pair) + 5
 
     outT = ("Name", "No. of logins")
@@ -30,7 +29,7 @@ def write(dict, dir):
 
 
 
-def printTable(dict):
+def printTableConsole(dict):
     outT = ("Name", "No. of logins")
 
     col_width = max(len(str(element)) for pair in dict for element in pair) + 5
@@ -45,7 +44,7 @@ def justify(pair, col_width):
 
 
 def main():
-    start = time.process_time()
+    os.chdir('../')
     nameDict = {}
     directory = 'data'
     totalCount = 0
@@ -63,10 +62,8 @@ def main():
     sorted_dict = sorted(nameDict.items(), key=lambda x: x[1], reverse=True)
 
     if len(sorted_dict):
-        printTable(sorted_dict)
-        write(sorted_dict, "output\\output.txt")
-    end = time.process_time()
-    print(end - start)
+        printTableConsole(sorted_dict)
+        writeTableFile(sorted_dict, "output\\output.txt")
 
 
 if __name__ == '__main__':
