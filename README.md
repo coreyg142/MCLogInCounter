@@ -1,7 +1,5 @@
 # MCLogInCounter
 
-
-
 A quick and dirty Python script to count the number of logins to a Minecraft server of each user.
 
 This script reads Minecraft server log files from a /data directory and counts the number of times each
